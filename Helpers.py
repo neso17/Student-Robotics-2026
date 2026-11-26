@@ -43,6 +43,9 @@ def getMarkerFromID(robot, target_id):
             return marker
     return None
 
+def markerHeightfromGround(robot, marker): 
+    relative_height = marker.position.distance * math.sin(marker.position.vertical_angle)
+    return CAMHEIGHT + relative_height
 
 def arduinoSet(robot, pin, outState): #self explanatory.
     robot.arduino.pins[pin].digital_write(outState)
