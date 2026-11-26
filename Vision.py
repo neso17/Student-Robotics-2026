@@ -134,6 +134,7 @@ def alignToTarget(robot, target_id):
             tries += 1
     return aligned
 
+# function to look for the fideucial markers and navigate back 
 def returnToHome(robot):
     markerIDs["home"] = getHomeMarkerIds(robot)
     # 1. find home marker
@@ -170,6 +171,7 @@ def returnToHome(robot):
     
     return True
 
+# mechanisms control
 
 def obtainMarker(robot, targ_id, servo1, servo2):
     if targ_id != None:
@@ -236,7 +238,7 @@ def obtainMarkerTop(robot, targ_id, servo1, servo2, servoTop):
 
 
 
-
+# CHALLENGE CODE- NOT FOR COMPETITION
 
 
 def angCheck(robot, horA):
