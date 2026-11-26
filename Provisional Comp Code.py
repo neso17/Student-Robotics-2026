@@ -45,6 +45,8 @@ def getHomeMarkerIds(robot):
     print(f"Zone is {z}. Looking for Home IDs: {my_home_ids}")
     return my_home_ids
 
+# ---TEST FUNCTIONS---
+
 def initialise():
     marker = findTargetMarker(robot)
     if marker is not None:
@@ -102,6 +104,10 @@ def fullSysTest():                              #vision mvmnt + mechanism test
 
 angleesss = True
 distssss = False
+
+
+
+
 # ---MAIN LOOP--- 
 print('Robot started')
 indicatePowerOn(robot)
@@ -171,8 +177,8 @@ while boxes_collected < TARGET_BOXES:
         #SIMON/JOSH - ADD BOTTOM MECHANISM OPEN FUNC HERE!!
         stepMotorsForward(robot, convertDistToSteps(robot, dist))
         print(f"Should be at target now")
-        #SIMON/JOSH - ADD BOTTOM MECHANISM CLOSE FUNC HERE!!
-        print()
+        sweep()
+        print(f"Collected marker box")
         boxes_collected += 1
         markerIDsAcquired.append(targ_id)
         print(f"Successfully collected box {boxes_collected}")
